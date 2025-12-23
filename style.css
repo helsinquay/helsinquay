@@ -1,0 +1,259 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- COLOR VARIABLES ---------- */
+:root {
+  --black: #000000;
+  --dark-olive: #3e432e;
+  --olive: #616f39;
+  --accent: #a7d129;
+  --text: #e6e6e6;
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+  background: var(--black);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  animation: pageFade 1.2s ease forwards;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- ABSTRACT SHAPES ---------- */
+.bg-shape {
+  position: fixed;
+  z-index: -1;
+  opacity: 0.12;
+  filter: blur(60px);
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent);
+  top: -100px;
+  left: -100px;
+}
+
+.shape-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--olive);
+  bottom: -150px;
+  right: -150px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.tagline {
+  color: #bdbdbd;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 30px;
+  background: var(--accent);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+/* fade-in sections */
+.fade-section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-section:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+.fade-section:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.fade-section:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+.fade-section:nth-of-type(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- HEADINGS ---------- */
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--olive);
+  padding-left: 12px;
+}
+
+/* ---------- FOR YOU / NOT FOR YOU ---------- */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.about ul {
+  list-style: none;
+}
+
+.about li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--dark-olive);
+  font-size: 0.95rem;
+}
+
+.about .dont li {
+  color: #cfcfcf;
+}
+
+/* ---------- RIGHTS ---------- */
+.rights {
+  background: rgba(62, 67, 46, 0.35);
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* ---------- PRICING ---------- */
+.pricing table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.pricing th,
+.pricing td {
+  padding: 14px;
+  border-bottom: 1px solid var(--dark-olive);
+}
+
+.pricing th {
+  color: var(--accent);
+  text-align: left;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* ---------- LISTS ---------- */
+ul,
+ol {
+  margin-left: 18px;
+}
+
+.rules li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  padding: 50px 20px;
+  text-align: center;
+  background: #050505;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 50px 16px;
+  }
+}
+
+/* ---------- PREVIEW SECTION ---------- */
+.previews {
+  max-width: 800px;
+}
+
+.preview-note {
+  font-size: 0.85rem;
+  color: #bdbdbd;
+  margin-bottom: 30px;
+}
+
+.track {
+  margin-bottom: 28px;
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(62, 67, 46, 0.35);
+}
+
+.track-title {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.track iframe {
+  width: 100%;
+  height: 166px;
+  border-radius: 8px;
+}
